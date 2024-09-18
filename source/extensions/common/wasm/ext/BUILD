@@ -1,5 +1,3 @@
-package(default_visibility = ["//visibility:public"])
-
 load("@rules_proto//proto:defs.bzl", "proto_library")
 load(
     "//bazel:envoy_build_system.bzl",
@@ -59,6 +57,7 @@ cc_library(
 filegroup(
     name = "envoy_proxy_wasm_api_js",
     srcs = ["envoy_proxy_wasm_api.js"],
+    visibility = ["//visibility:public"],
 )
 
 # NB: this target is compiled both to native code and to Wasm. Hence the generic rule.
